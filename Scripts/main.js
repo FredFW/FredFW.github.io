@@ -77,16 +77,16 @@ function updatePosition(){
   var contactDivBottom = portfolioDivBottom + $("#contactDiv").outerHeight;
   
   if (-(myScroll.y) < homeDivBottom){
-    return '"#homeDiv"';
+    return "#homeDiv";
   }
   else if (-(myScroll.y) < aboutDivBottom){
-    return '"#abouthead"';
+    return "#abouthead";
   }
   else if (-(myScroll.y) < portfolioDivBottom){
-    return '"#portfolioDiv"';
+    return "#portfolioDiv";
   }
   else{
-    return '"#contactDiv"';
+    return "#contactDiv";
   }
   
 }

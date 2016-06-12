@@ -46,20 +46,13 @@ $(document).ready(function(){
     location.reload();
   });
 
-  // myScroll.on("scroll", nav);
-  // myScroll.on("scroll", move);
-  myScroll.on("scroll", test);
-  myScroll.on("scroll", reset);
-  // myScroll.on("scrollEnd", nav);
-  // myScroll.on("scrollEnd", move);
-  myScroll.on("scrollEnd", test);
-  myScroll.on("scrollEnd", reset);
+
+  myScroll.on("scroll", move);
+  myScroll.on("scrollEnd", move);
 });
 
 document.addEventListener("touchmove", function (e) { e.preventDefault(); }, false);
-// document.addEventListener("keydown", nav);
 document.addEventListener("keydown", move);
-
 
 function scrollToHome(){
   myScroll.scrollToElement("#homeDiv");
@@ -90,15 +83,6 @@ function initPosition(){
   }
 }
 
-// function nav(){
-//   if (myScroll.y > -300) {
-//       $("nav").css("opacity","0");
-//   }
-//   if (myScroll.y < -300) {
-//       $("nav").css("opacity","1");
-//   }
-// }
-
 function move() {
   
   if (myScroll.y > -300) {
@@ -110,57 +94,21 @@ function move() {
   
   $(".moveFromLeft").each( function(){
     var top_of_object = $(this).offset().top;
-    var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+    // var bottom_of_object = $(this).offset().top + $(this).outerHeight();
     var bottom_of_window = $(window).height() - 50;
-    if(bottom_of_window > top_of_object && bottom_of_object > 0){
-      $(this).animate({left:"0"},1000);
-    }
-    else{
-      $(this).css("left","-10000px");
+    // if(bottom_of_window > top_of_object && bottom_of_object > 0){
+    if(bottom_of_window > top_of_object){
+      $(this).animate({left:"0"},"slow");
     }
   });
   
   $(".moveFromRight").each( function(){
     var top_of_object = $(this).offset().top;
-    var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+    // var bottom_of_object = $(this).offset().top + $(this).outerHeight();
     var bottom_of_window = $(window).height() - 50;
-    if(bottom_of_window > top_of_object && bottom_of_object > 0){
-      $(this).animate({right:"0"},1000);
-    }
-    else{
-      $(this).css("right","-10000px");
+    // if(bottom_of_window > top_of_object && bottom_of_object > 0){
+    if(bottom_of_window > top_of_object){
+      $(this).animate({right:"0"},"slow");
     }
   });
-}
-
-function test(){
-  
-  var top_of_object = $("#test").offset().top;
-  var bottom_of_object = $("#test").offset().top + $("#test").outerHeight();
-  var bottom_of_window = $(window).height() - 150;
-  document.getElementById("topOfObject").innerHTML = "Top of object = " + top_of_object;
-  document.getElementById("bottomOfObject").innerHTML = "Bottom of object = " + bottom_of_object;
-  document.getElementById("bottomOfWindow").innerHTML = "Bottom of window = " + bottom_of_window;
-  document.getElementById("myScrolly").innerHTML = "myScroll.y = " + myScroll.y;
-  
-  if(bottom_of_window > top_of_object && bottom_of_object > 200){
-    $("#test").animate({left:"0"},"now");
-    document.getElementById("status").innerHTML = "status = left() " + $("#test").css("left");
-  }
-  
-}
-
-function left(){
-  $("#test").css("left","0");
-  document.getElementById("status").innerHTML = "status = left() " + $("#test").css("left");
-}
-
-function reset(){
-  var top_of_object = $("#test").offset().top;
-  var bottom_of_object = $("#test").offset().top + $("#test").outerHeight();
-  var bottom_of_window = $(window).height() - 150;
-  if (bottom_of_window < top_of_object || bottom_of_object < 200){
-    $("#test").animate({left:"-1500"},"now");
-    document.getElementById("status").innerHTML = "status = reset() " + $("#test").css("left");
-  }
 }

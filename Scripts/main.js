@@ -38,13 +38,13 @@ $(document).ready(function(){
     hideDistantElements: true
   });
   
-  // initPosition();
+  initPosition();
   
-  // $(window).resize(function(){
-  //   var temp = updatePosition();
-  //   sessionStorage.setItem("y",temp);
-  //   location.reload();
-  // });
+  $(window).resize(function(){
+    var temp = updatePosition();
+    sessionStorage.setItem("y",temp);
+    location.reload();
+  });
 
   myScroll.on("scroll", move);
   myScroll.on("scrollEnd", move);
@@ -69,34 +69,34 @@ function scrollToContact(){
   myScroll.scrollToElement("#contactDiv");
 }
 
-// function updatePosition(){
+function updatePosition(){
   
-//   var homeDivBottom = $("#homeDiv").outerHeight;
-//   var aboutDivBottom = homeDivBottom + $("#abouthead").outerHeight + $("#aboutDiv").outerHeight + $(".skill").outerHeight;
-//   var portfolioDivBottom = aboutDivBottom + $("#portfolio").outerHeight;
-//   var contactDivBottom = portfolioDivBottom + $("#contactDiv").outerHeight;
+  var homeDivBottom = $("#homeDiv").outerHeight;
+  var aboutDivBottom = homeDivBottom + $("#abouthead").outerHeight + $("#aboutDiv").outerHeight + $(".skill").outerHeight;
+  var portfolioDivBottom = aboutDivBottom + $("#portfolio").outerHeight;
+  var contactDivBottom = portfolioDivBottom + $("#contactDiv").outerHeight;
   
-//   if (-(myScroll.y) < homeDivBottom){
-//     return "#homeDiv";
-//   }
-//   else if (-(myScroll.y) < aboutDivBottom){
-//     return "#abouthead";
-//   }
-//   else if (-(myScroll.y) < portfolioBottom){
-//     return "#portfolioDiv";
-//   }
-//   else{
-//     return "#contactDiv";
-//   }
+  if (-(myScroll.y) < homeDivBottom){
+    return ""#homeDiv"";
+  }
+  else if (-(myScroll.y) < aboutDivBottom){
+    return ""#abouthead"";
+  }
+  else if (-(myScroll.y) < portfolioBottom){
+    return ""#portfolioDiv"";
+  }
+  else{
+    return ""#contactDiv"";
+  }
   
-// }
+}
 
-// function initPosition(){
-//   if (sessionStorage.getItem("y")){
-//     var position = sessionStorage.getItem("y");
-//     myScroll.scrollToElement(position);
-//   }
-// }
+function initPosition(){
+  if (sessionStorage.getItem("y")){
+    var position = sessionStorage.getItem("y");
+    myScroll.scrollToElement(position);
+  }
+}
 
 function move() {
   

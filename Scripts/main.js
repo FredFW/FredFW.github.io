@@ -73,8 +73,7 @@ function updatePosition(){
   
   var homeDivBottom = $("#homeDiv").outerHeight();
   var aboutDivBottom = homeDivBottom + $("#abouthead").outerHeight() + $("#aboutDiv").outerHeight() + $(".skill").outerHeight();
-  var portfolioDivBottom = aboutDivBottom + $("#portfolio").outerHeight();
-  var contactDivBottom = portfolioDivBottom + $("#contactDiv").outerHeight();
+  var portfolioDivBottom = aboutDivBottom + $("#portfolioDiv").outerHeight() + $(".showcase").outerHeight();
   
   if (-(myScroll.y) < homeDivBottom){
     return "#homeDiv";

@@ -71,15 +71,38 @@ function scrollToContact(){
 }
 
 function updatePosition(){
-  var width = $(window).width();
-  return myScroll.y * width;
+  // var width = $(window).width();
+  // return myScroll.y * width;
+  
+  var homeDivBottom = $("#homeDiv").outerHeight;
+  var aboutDivBottom = homeDivBottom + $("#abouthead").outerHeight + $("#aboutDiv").outerHeight + $(".skill").outerHeight;
+  var portfolioDivBottom = aboutDivBottom + $("#portfolio").outerHeight;
+  var contactDivBottom = portfolioDivBottom + $("#contactDiv").outerHeight;
+  
+  if (-(myScroll.y) < homeDivBottom){
+    return "#homeDiv";
+  }
+  else if (-(myScroll.y) < aboutDivBottom){
+    return "#abouthead";
+  }
+  else if (-(myScroll.y) < portfolioBottom){
+    return "#portfolioDiv";
+  }
+  else{
+    return "#contactDiv";
+  }
+  
 }
 
 function initPosition(){
   if (sessionStorage.getItem("y")){
-    var width = $(window).width();
-    var position = sessionStorage.getItem("y") / width;
-    myScroll.scrollTo(0,position);
+    // var width = $(window).width();
+    // var position = sessionStorage.getItem("y") / width;
+    // myScroll.scrollTo(0,position);
+    
+    var position = sessionStorage.getItem("y");
+    myScroll.scrollToElement(position);
+    
   }
 }
 

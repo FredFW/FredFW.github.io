@@ -286,3 +286,18 @@ a.thumbnail {
   -webkit-transform: rotate(0);
           transform: rotate(0);
 }
+
+@media only screen and (max-width: 1024px) {
+  .home {
+    background-image: url("../Styles/MTMw_OTgx_MTI5_NDk3_OTA5_Nz_I2-sm.jpg");
+  }
+  .about {
+    background-image: url("../Styles/wallpaper-2594020-sm.jpg");
+  }
+  .portfolio {
+    background-image: url("../Styles/6877935_night_photography-sm.jpg");
+  }
+  .contact {
+    background-image: url(../Styles/6915555_new_york_city_night-sm.jpg);
+  }
+}

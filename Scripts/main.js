@@ -82,7 +82,7 @@ function updatePosition(){
   else if (-(myScroll.y) < aboutDivBottom){
     return '"#abouthead"';
   }
-  else if (-(myScroll.y) < portfolioBottom){
+  else if (-(myScroll.y) < portfolioDivBottom){
     return '"#portfolioDiv"';
   }
   else{

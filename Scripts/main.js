@@ -41,8 +41,8 @@ $(document).ready(function(){
   initPosition();
   
   $(window).resize(function(){
-    var temp = updatePosition();
-    sessionStorage.setItem("y",temp);
+    // var temp = updatePosition();
+    // sessionStorage.setItem("y",temp);
     location.reload();
   });
 
@@ -69,26 +69,26 @@ function scrollToContact(){
   myScroll.scrollToElement("#contactDiv");
 }
 
-function updatePosition(){
+// function updatePosition(){
+//   var homeDivBottom = $("#homeDiv").outerHeight();
+//   var aboutDivBottom = homeDivBottom + $("#abouthead").outerHeight() + $("#aboutDiv").outerHeight() + $(".skill").outerHeight();
+//   var portfolioDivBottom = aboutDivBottom + $("#portfolioDiv").outerHeight() + $(".showcase").outerHeight();
+//   var contactDivBottom = portfolioDivBottom + $("#contactDiv").outerHeight();
   
-  var homeDivBottom = $("#homeDiv").outerHeight();
-  var aboutDivBottom = homeDivBottom + $("#abouthead").outerHeight() + $("#aboutDiv").outerHeight() + $(".skill").outerHeight();
-  var portfolioDivBottom = aboutDivBottom + $("#portfolioDiv").outerHeight() + $(".showcase").outerHeight();
-  
-  if (-(myScroll.y) < homeDivBottom){
-    return "#homeDiv";
-  }
-  else if (-(myScroll.y) < aboutDivBottom){
-    return "#abouthead";
-  }
-  else if (-(myScroll.y) < portfolioDivBottom){
-    return "#portfolioDiv";
-  }
-  else{
-    return "#contactDiv";
-  }
-  
-}
+//   if (-(myScroll.y) < homeDivBottom){
+//     sessionStorage.setItem("y","#homeDiv");
+//   }
+//   else if (-(myScroll.y) < aboutDivBottom){
+//     sessionStorage.setItem("y","#abouthead");
+//   }
+//   else if (-(myScroll.y) < portfolioDivBottom){
+//     sessionStorage.setItem("y","#portfolioDiv");
+//   }
+//   else{
+//     sessionStorage.setItem("y","#contactDiv");
+//   }
+
+// }
 
 function initPosition(){
   if (sessionStorage.getItem("y")){
@@ -109,7 +109,7 @@ function move() {
   $(".moveFromLeft").each( function(){
     var top_of_object = $(this).offset().top;
     // var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-    var bottom_of_window = $(window).height() - 50;
+    var bottom_of_window = $(window).height() * 0.95;
     // if(bottom_of_window > top_of_object && bottom_of_object > 0){
     if(bottom_of_window > top_of_object){
       $(this).animate({left:"0"},"slow");
@@ -119,10 +119,28 @@ function move() {
   $(".moveFromRight").each( function(){
     var top_of_object = $(this).offset().top;
     // var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-    var bottom_of_window = $(window).height() - 50;
+    var bottom_of_window = $(window).height() * 0.95;
     // if(bottom_of_window > top_of_object && bottom_of_object > 0){
     if(bottom_of_window > top_of_object){
       $(this).animate({right:"0"},"slow");
     }
   });
+  
+  var homeDivBottom = $("#homeDiv").outerHeight();
+  var aboutDivBottom = homeDivBottom + $("#abouthead").outerHeight() + $("#aboutDiv").outerHeight() + $(".skill").outerHeight();
+  var portfolioDivBottom = aboutDivBottom + $("#portfolioDiv").outerHeight() + $(".showcase").outerHeight();
+  var contactDivBottom = portfolioDivBottom + $("#contactDiv").outerHeight();
+  
+  if (-(myScroll.y) < homeDivBottom){
+    sessionStorage.setItem("y","#homeDiv");
+  }
+  else if (-(myScroll.y) < aboutDivBottom){
+    sessionStorage.setItem("y","#abouthead");
+  }
+  else if (-(myScroll.y) < portfolioDivBottom){
+    sessionStorage.setItem("y","#portfolioDiv");
+  }
+  else{
+    sessionStorage.setItem("y","#contactDiv");
+  }
 }

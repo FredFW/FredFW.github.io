@@ -106,25 +106,37 @@ function move() {
       $("nav").css("opacity","1");
   }
   
-  $(".moveFromLeft").each( function(){
+  // $(".moveFromLeft").each( function(){
+  $(".opt10").each( function(){
     var top_of_object = $(this).offset().top;
-    // var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-    var bottom_of_window = $(window).height() * 0.95;
-    // if(bottom_of_window > top_of_object && bottom_of_object > 0){
-    if(bottom_of_window > top_of_object){
-      $(this).animate({left:"0"},"slow");
+    var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+    // var bottom_of_window = $(window).height() * 0.95;
+    var bottom_of_window = $(window).height() * 0.8;
+    
+    if(bottom_of_window > top_of_object && bottom_of_object > $(window).height() * 0.25){
+    // if(bottom_of_window > top_of_object){
+      // $(this).animate({left:"0"},"slow");
+      $(this).css("opacity","1");
+    }
+    else{
+      $(this).css("opacity","0.2");
     }
   });
   
-  $(".moveFromRight").each( function(){
-    var top_of_object = $(this).offset().top;
-    // var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-    var bottom_of_window = $(window).height() * 0.95;
-    // if(bottom_of_window > top_of_object && bottom_of_object > 0){
-    if(bottom_of_window > top_of_object){
-      $(this).animate({right:"0"},"slow");
-    }
-  });
+  // $(".moveFromRight").each( function(){
+  //   var top_of_object = $(this).offset().top;
+  //   var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+  //   // var bottom_of_window = $(window).height() * 0.95;
+  //   var bottom_of_window = $(window).height() * 0.8;
+  //   if(bottom_of_window > top_of_object && bottom_of_object > $(window).height() * 0.25){
+  //   // if(bottom_of_window > top_of_object){
+  //     // $(this).animate({right:"0"},"slow");
+  //     $(this).css("opacity","1");
+  //   }
+  //   else{
+  //     $(this).css("opacity","0.2");
+  //   }
+  // });
   
   var homeDivBottom = $("#homeDiv").outerHeight();
   var aboutDivBottom = homeDivBottom + $("#abouthead").outerHeight() + $("#aboutDiv").outerHeight() + $(".skill").outerHeight();

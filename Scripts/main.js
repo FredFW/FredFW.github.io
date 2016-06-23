@@ -1,6 +1,6 @@
 var myScroll = "";
 
-$(document).ready(function(){
+function loaded(){
   
   $(".navbar-nav li a").click(function (event) {
     var toggle = $(".navbar-toggle").is(":visible");
@@ -48,7 +48,7 @@ $(document).ready(function(){
 
   myScroll.on("scroll", move);
   myScroll.on("scrollEnd", move);
-});
+};
 
 document.addEventListener("touchmove", function (e) { e.preventDefault(); }, false);
 document.addEventListener("keydown", move);

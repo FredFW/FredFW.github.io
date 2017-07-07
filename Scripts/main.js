@@ -30,10 +30,7 @@ function loaded(){
   $("#scroller").stellar({
     horizontalScrolling: false,
     verticalScrolling: true,
-    //2017-7-7
-    //responsive: false,
-    //2017-7-7
-    responsive: true,
+    responsive: false,
     scrollProperty: "transform",
     positionProperty: "transform",
     parallaxBackgrounds: true,
@@ -43,15 +40,11 @@ function loaded(){
   
   initPosition();
   
-  // 2017-7-7	
-  // $(window).resize(function(){
-	  
+  $(window).resize(function(){
     // var temp = updatePosition();
     // sessionStorage.setItem("y",temp);
-	
-  //2017-7-7
-  // location.reload();
-  // });
+    location.reload();
+  });
 
   myScroll.on("scroll", move);
   myScroll.on("scrollEnd", move);
@@ -145,23 +138,21 @@ function move() {
   //   }
   // });
   
-  // 2017-7-7
-  // var homeDivBottom = $("#homeDiv").outerHeight();
-  // var aboutDivBottom = homeDivBottom + $("#abouthead").outerHeight() + $("#aboutDiv").outerHeight() + $(".skill").outerHeight();
-  // var portfolioDivBottom = aboutDivBottom + $("#portfolioDiv").outerHeight() + $(".showcase").outerHeight();
-  // var contactDivBottom = portfolioDivBottom + $("#contactDiv").outerHeight();
+  var homeDivBottom = $("#homeDiv").outerHeight();
+  var aboutDivBottom = homeDivBottom + $("#abouthead").outerHeight() + $("#aboutDiv").outerHeight() + $(".skill").outerHeight();
+  var portfolioDivBottom = aboutDivBottom + $("#portfolioDiv").outerHeight() + $(".showcase").outerHeight();
+  var contactDivBottom = portfolioDivBottom + $("#contactDiv").outerHeight();
   
-  // 2017-7-7
-  // if (-(myScroll.y) < homeDivBottom){
-  //  sessionStorage.setItem("y","#homeDiv");
-  // }
-  // else if (-(myScroll.y) < aboutDivBottom){
-  //  sessionStorage.setItem("y","#abouthead");
-  // }
-  // else if (-(myScroll.y) < portfolioDivBottom){
-  //  sessionStorage.setItem("y","#portfolioDiv");
-  // }
-  // else{
-  //  sessionStorage.setItem("y","#contactDiv");
-  // }
+  if (-(myScroll.y) < homeDivBottom){
+    sessionStorage.setItem("y","#homeDiv");
+  }
+  else if (-(myScroll.y) < aboutDivBottom){
+    sessionStorage.setItem("y","#abouthead");
+  }
+  else if (-(myScroll.y) < portfolioDivBottom){
+    sessionStorage.setItem("y","#portfolioDiv");
+  }
+  else{
+    sessionStorage.setItem("y","#contactDiv");
+  }
 }

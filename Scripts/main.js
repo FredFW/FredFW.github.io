@@ -30,7 +30,9 @@ function loaded(){
   $("#scroller").stellar({
     horizontalScrolling: false,
     verticalScrolling: true,
+    //2017-7-7
     //responsive: false,
+    //2017-7-7
     responsive: true,
     scrollProperty: "transform",
     positionProperty: "transform",

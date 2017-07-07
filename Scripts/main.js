@@ -40,11 +40,15 @@ function loaded(){
   
   initPosition();
   
-  $(window).resize(function(){
+  // 2017-7-7	
+  // $(window).resize(function(){
+	  
     // var temp = updatePosition();
     // sessionStorage.setItem("y",temp);
-    location.reload();
-  });
+	
+  //2017-7-7
+  // location.reload();
+  // });
 
   myScroll.on("scroll", move);
   myScroll.on("scrollEnd", move);
@@ -138,21 +142,23 @@ function move() {
   //   }
   // });
   
-  var homeDivBottom = $("#homeDiv").outerHeight();
-  var aboutDivBottom = homeDivBottom + $("#abouthead").outerHeight() + $("#aboutDiv").outerHeight() + $(".skill").outerHeight();
-  var portfolioDivBottom = aboutDivBottom + $("#portfolioDiv").outerHeight() + $(".showcase").outerHeight();
-  var contactDivBottom = portfolioDivBottom + $("#contactDiv").outerHeight();
+  // 2017-7-7
+  // var homeDivBottom = $("#homeDiv").outerHeight();
+  // var aboutDivBottom = homeDivBottom + $("#abouthead").outerHeight() + $("#aboutDiv").outerHeight() + $(".skill").outerHeight();
+  // var portfolioDivBottom = aboutDivBottom + $("#portfolioDiv").outerHeight() + $(".showcase").outerHeight();
+  // var contactDivBottom = portfolioDivBottom + $("#contactDiv").outerHeight();
   
-  if (-(myScroll.y) < homeDivBottom){
-    sessionStorage.setItem("y","#homeDiv");
-  }
-  else if (-(myScroll.y) < aboutDivBottom){
-    sessionStorage.setItem("y","#abouthead");
-  }
-  else if (-(myScroll.y) < portfolioDivBottom){
-    sessionStorage.setItem("y","#portfolioDiv");
-  }
-  else{
-    sessionStorage.setItem("y","#contactDiv");
-  }
+  // 2017-7-7
+  // if (-(myScroll.y) < homeDivBottom){
+  //  sessionStorage.setItem("y","#homeDiv");
+  // }
+  // else if (-(myScroll.y) < aboutDivBottom){
+  //  sessionStorage.setItem("y","#abouthead");
+  // }
+  // else if (-(myScroll.y) < portfolioDivBottom){
+  //  sessionStorage.setItem("y","#portfolioDiv");
+  // }
+  // else{
+  //  sessionStorage.setItem("y","#contactDiv");
+  // }
 }

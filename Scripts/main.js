@@ -22,7 +22,7 @@ function loaded(){
     scrollbars: true,
     interactiveScrollbars: true,
     keyBindings: true,
-    momentum: true,
+    momentum: false,
     click: true,
     probeType: 2
   });

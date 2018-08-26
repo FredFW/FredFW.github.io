@@ -1,60 +1,31 @@
-var myScroll = "";
+var content = document.getElementById("content");
+var test = document.getElementById("test");
 
 function loaded(){
-  
-  $(".navbar-nav li a").click(function (event) {
-    var toggle = $(".navbar-toggle").is(":visible");
-    if (toggle) {
-      $(".navbar-collapse").collapse('hide');
-    }
-  });
-  
-  $(".navbar-brand").click(function (event) {
-    var toggle1 = $(".navbar-toggle").is(":visible");
-    if (toggle1) {
-      $(".navbar-collapse").collapse('hide');
-    }
-  });
-  
-  myScroll = new IScroll("#wrapper",{
-    bounce: false,
-    mouseWheel: true,
-    scrollbars: true,
-    interactiveScrollbars: true,
-    keyBindings: true,
-    momentum: false,
-    click: true,
-    probeType: 2
-  });
-  
-  $("#scroller").stellar({
-    horizontalScrolling: false,
-    verticalScrolling: true,
-    responsive: false,
-    scrollProperty: "transform",
-    positionProperty: "transform",
-    parallaxBackgrounds: true,
-    parallaxElements: false,
-    hideDistantElements: true
-  });
-  
-  initPosition();
-  
-  $(window).resize(function(){
-    // var temp = updatePosition();
-    // sessionStorage.setItem("y",temp);
-    location.reload();
-  });
 
-  myScroll.on("scroll", move);
-  myScroll.on("scrollEnd", move);
+    $(".navbar-nav li a").click(function (event){
+        var toggle = $(".navbar-toggle").is(":visible");
+        if (toggle) {
+            $(".navbar-collapse").collapse('hide');
+        }
+    });
+  
+    $(".navbar-brand").click(function (event){
+        var toggle1 = $(".navbar-toggle").is(":visible");
+        if (toggle1) {
+            $(".navbar-collapse").collapse('hide');
+        }
+    });
+
 };
 
-document.addEventListener("touchmove", function (e) { e.preventDefault(); }, false);
-document.addEventListener("keydown", move);
+
+// document.addEventListener("touchmove", function (e) { e.preventDefault(); }, false);
+// document.addEventListener("keydown", move);
+
 
 function scrollToHome(){
-  myScroll.scrollToElement("#homeDiv");
+    myScroll.scrollToElement("#homeDiv");
 }
 
 function scrollToAbout(){
@@ -62,11 +33,11 @@ function scrollToAbout(){
 }
 
 function scrollToPortfolio(){
-  myScroll.scrollToElement("#portfolioDiv");
+    myScroll.scrollToElement("#portfolioDiv");
 }
 
 function scrollToContact(){
-  myScroll.scrollToElement("#contactDiv");
+    myScroll.scrollToElement("#contactDiv");
 }
 
 // function updatePosition(){
@@ -90,38 +61,34 @@ function scrollToContact(){
 
 // }
 
-function initPosition(){
-  if (sessionStorage.getItem("y")){
-    var position = sessionStorage.getItem("y");
-    myScroll.scrollToElement(position);
-  }
-}
-
-function move() {
+function move(){
   
-  if (myScroll.y > -300) {
-      $("nav").css("opacity","0");
-  }
-  if (myScroll.y < -300) {
-      $("nav").css("opacity","1");
-  }
+    if (content.scrollTop < 300){
+        $("nav").css("visibility","hidden");
+    }
+    if (content.scrollTop > 300){
+        $("nav").css("visibility","visible");
+    }
   
-  // $(".moveFromLeft").each( function(){
-  $(".opt10").each( function(){
-    var top_of_object = $(this).offset().top;
-    var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-    // var bottom_of_window = $(window).height() * 0.95;
-    var bottom_of_window = $(window).height() * 0.8;
+    // $(".moveFromLeft").each( function(){
+    $(".opt10").each( function(){
+        var top_of_object = $(this).offset().top;
+        var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+        // var bottom_of_window = $(window).height() * 0.95;
+        var bottom_of_window = $(window).height() * 0.8;
     
-    if(bottom_of_window > top_of_object && bottom_of_object > $(window).height() * 0.25){
-    // if(bottom_of_window > top_of_object){
-      // $(this).animate({left:"0"},"slow");
-      $(this).css("opacity","1");
-    }
-    else{
-      $(this).css("opacity","0.2");
-    }
-  });
+        if(bottom_of_window > top_of_object && bottom_of_object > $(window).height() * 0.25){
+            if(bottom_of_window > top_of_object){
+                // $(this).animate({left:"0"},"slow");
+                $(this).css("opacity","1");
+            }
+            else{
+                $(this).css("opacity","0.2");
+            }
+        }
+    })
+
+}
   
   // $(".moveFromRight").each( function(){
   //   var top_of_object = $(this).offset().top;
@@ -138,6 +105,7 @@ function move() {
   //   }
   // });
   
+  /*
   var homeDivBottom = $("#homeDiv").outerHeight();
   var aboutDivBottom = homeDivBottom + $("#abouthead").outerHeight() + $("#aboutDiv").outerHeight() + $(".skill").outerHeight();
   var portfolioDivBottom = aboutDivBottom + $("#portfolioDiv").outerHeight() + $(".showcase").outerHeight();
@@ -155,4 +123,8 @@ function move() {
   else{
     sessionStorage.setItem("y","#contactDiv");
   }
-}
+  */
+
+function show(){
+    test.innerHTML = "content.scrollTop: " + content.scrollTop;
+};

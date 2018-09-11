@@ -32,82 +32,69 @@
 
     <body onload="loaded();">
 
-        <div id="test"></div>
+        <!--<div id="test"></div>-->
 
         <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" id="headbar">
             <div class="container-fluid">
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar top-bar"></span>
-                  <span class="icon-bar middle-bar"></span>
-                  <span class="icon-bar bottom-bar"></span>
-                </button>
-                <a class="navbar-brand" href="javascript: scrollToHome();nav();move();" style="font-weight: bolder;">Fred Wong</a>
-              </div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar top-bar"></span>
+                        <span class="icon-bar middle-bar"></span>
+                        <span class="icon-bar bottom-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="javascript: scrollToHome();" style="font-weight: bolder;">Fred Wong</a>
+                </div>
       
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse" id="navbar">
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="javascript: scrollToHome();nav();move();" style="font-weight: bolder;">Home</a></li>
-                  <li><a href="javascript: scrollToAbout();nav();move();" style="font-weight: bolder;">About</a></li>
-                  <li><a href="javascript: scrollToPortfolio();nav();move();" style="font-weight: bolder;">Portfolio</a></li>
-                  <li><a href="javascript: scrollToContact();nav();move();" style="font-weight: bolder;">Contact</a>
-                </ul>
-              </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="javascript: scrollToHome();" style="font-weight: bolder;">Home</a></li>
+                        <li><a href="javascript: scrollToAbout();" style="font-weight: bolder;">About</a></li>
+                        <li><a href="javascript: scrollToPortfolio();" style="font-weight: bolder;">Portfolio</a></li>
+                        <li><a href="javascript: scrollToContact();" style="font-weight: bolder;">Contact</a>
+                    </ul>
+                </div>
             </div>
         </nav>
 
         <div class="wrapper container-fluid" id="content" onscroll="move();">
 
-            <div class="home layer homeBg">
+            <div class="home layer homeBg" id="homeDiv">
 
-                <div class="homeArea">
-                    <div class="homeBack">
-                        <h1>Fred Wong</h1>
-                        <h2>A Full Stack Developer</h2>
-                    </div>
-
-                    <hr class="homeline">
-
-                    <div class="row">
-                        <div class="col-sm-12 col-md-2 col-md-offset-2">
-                            <a href="http://www.freecodecamp.com/fredfw" target="_blank" class="btn btn-success cbtn" role="button"><i class="fa fa-fire"></i> freeCodeCamp</a>
-                        </div>
-                        <div class="col-sm-12 col-md-2">
-                            <a href="https://plus.google.com/104519755189153793005/posts" target="_blank" class="btn btn-danger cbtn" role="button"><i class="fa fa-google-plus"></i> Google+</a>
-                        </div>
-                        <div class="col-sm-12 col-md-2">
-                            <a href="https://github.com/FredFW" target="_blank" class="btn btn-warning cbtn" role="button"><i class="fa fa-github"></i> Github</a>
-                        </div>
-                        <div class="col-sm-12 col-md-2">
-                            <a href="https://hk.linkedin.com/in/fred-wong-061105b3" target="_blank" class="btn btn-primary cbtn" role="button"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
-                        </div>
-                    </div>
+                <div class="homeBack">
+                    <h1 id="head">Fred Wong</h1>
+                    <h2>A Full Stack Developer</h2>
                 </div>
 
+                <hr class="homeline">
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-2 col-md-offset-2">
+                        <a href="http://www.freecodecamp.com/fredfw" target="_blank" class="btn btn-success cbtn" role="button"><i class="fa fa-fire"></i> freeCodeCamp</a>
+                    </div>
+                    <div class="col-sm-12 col-md-2">
+                        <a href="https://plus.google.com/104519755189153793005/posts" target="_blank" class="btn btn-danger cbtn" role="button"><i class="fa fa-google-plus"></i> Google+</a>
+                    </div>
+                    <div class="col-sm-12 col-md-2">
+                        <a href="https://github.com/FredFW" target="_blank" class="btn btn-warning cbtn" role="button"><i class="fa fa-github"></i> Github</a>
+                    </div>
+                    <div class="col-sm-12 col-md-2">
+                        <a href="https://hk.linkedin.com/in/fred-wong-061105b3" target="_blank" class="btn btn-primary cbtn" role="button"><i class="fa fa-linkedin-square"></i> LinkedIn</a>
+                    </div>
+                </div>              
+                <!--<div><i class="fa fa-angle-double-down fa-5x" aria-hidden="true"></i></div>-->
             </div>
 
-            <div class="about">
+            <div class="about" id="aboutDiv">
 
-                <div class="row" id="abouthead">
+                <div class="row opt10" id="abouthead">
                     <h1>About me</h1>
                 </div>
                 
                 <div class="aboutArea aboutBg para">
-                    
-                    <!-- ******hide******* -->
-                    <div class="row floater aboutWindow">
-                        <div class="col-xs-12 col-sm-6 aboutBack">
-                            <h2> I am a coder with great passion for web development. Coding is always hard but it is always fun! </h2>
-                        </div>
-                        <div class="hidden-xs col-sm-6">
-                            <img src='./Styles/i_Stock_000037547418_Medium.jpg' border='0' class="img-circle" />
-                        </div>
-                    </div>
-                    <!-- ******hide******* -->
 
-                    <div class="row vCenter aboutWindow">
+                    <div class="row opt10">
                         <div class="col-xs-12 col-sm-6 aboutBack">
                             <h2> I am a coder with great passion for web development. Coding is always hard but it is always fun! </h2>
                         </div>
@@ -120,18 +107,7 @@
 
                 <div class="skill">
 
-                    <!-- ******Hide****** -->
-                    <div class="floater skillList">
-                        <h2> Languages, Frameworks & Skills: </h2>
-                        <br>
-                        <h2> Javascript, HTML5, CSS3 </h2>
-                        <h2> C/C++, Python, PHP, SQL</h2>
-                        <h2> jQuery, Bootstrap3, AJAX </h2>
-                        <h2> Excel VBA </h2>
-                    </div>
-                    <!-- ******Hide****** -->
-
-                    <div class="vCenter skillList">
+                    <div class="opt10">
                         <h2> Languages, Frameworks & Skills: </h2>
                         <br>
                         <h2> Javascript, HTML5, CSS3 </h2>
@@ -144,16 +120,14 @@
 
             </div>
 
-            <div class="portfolio">
+            <div class="portfolio" id="portfolioDiv">
 
                 <div class="portfolioBackdrop portfolioBg para">
-
-                    <div class="portfolioHead">       
-                        <div class="row portfolioArea">
-                            <div class="portfolioBack">
-                                <h1>My Portfolio</h1>
-                                <h2>Below are my recent work:</h2>
-                            </div>
+    
+                    <div class="portfolioArea row">
+                        <div class="portfolioBack col-xs-12 col-sm-4 opt10">
+                            <h1>My Portfolio</h1>
+                            <h2>Below are my recent work:</h2>
                         </div>
                     </div>
 
@@ -161,39 +135,39 @@
     
                 <div class="showcase">
                     <div class="row">
-                        <div class="col-xs-12 col-md-4">
+                        <div class="col-xs-12 col-md-4 opt10">
                             <a class="thumbnail" href="http://fredfw.github.io/eisenhowerPage" target="_blank">
                                     <img src="./Styles/eisenhowerPage.jpg" alt="Tribute Page - Esienhower">
                                     <span class="hoverEffect">Tribute Page - Esienhower</span>
                             </a>
                         </div>
-                        <div class="col-xs-12 col-md-4">
+                        <div class="col-xs-12 col-md-4 opt10">
                             <a class="thumbnail" href="https://fredfw.github.io/randomQuote/" target="_blank">
                                 <img src="./Styles/randomQuote.jpg" alt="Random Quote Generator" width="210" height="200">
                                     <span class="hoverEffect">Random Quote Generator</span>
                             </a>
                         </div>
-                        <div class="col-xs-12 col-md-4">
+                        <div class="col-xs-12 col-md-4 opt10">
                             <a class="thumbnail" href="https://fredfw.github.io/weatherStation/" target="_blank">
-                                <img src="/Styles/weatherStation.jpg" alt="Weather Station" width="210" height="200">
+                                <img src="./Styles/weatherStation.jpg" alt="Weather Station" width="210" height="200">
                                     <span class="hoverEffect">Weather Station</span>
                             </a>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-4">
+                    <div class="row opt10">
+                        <div class="col-xs-12 col-md-4 opt10">
                             <a class="thumbnail" href="https://fredfw.github.io/wikiPost/" target="_blank">
-                                <img src="/Styles/wikiPost.jpg" alt="Wikipedia Viewer" width="210" height="200">
+                                <img src="./Styles/wikiPost.jpg" alt="Wikipedia Viewer" width="210" height="200">
                                 <span class="hoverEffect">Wikipedia Viewer</span>
                             </a>
                         </div>
-                        <div class="col-xs-12 col-md-4">
+                        <div class="col-xs-12 col-md-4 opt10">
                             <a class="thumbnail" href="http://www.w3schools.com">
                                 <img src="http://ftextures.com/textures/working-site-triangle-sign.jpg" alt="Working on it!" width="210" height="200">
                                 <span class="hoverEffect">Coming Soon</span>
                             </a>
                         </div>
-                        <div class="col-xs-12 col-md-4">
+                        <div class="col-xs-12 col-md-4 opt10">
                             <a class="thumbnail" href="http://www.w3schools.com">
                                 <img src="http://ftextures.com/textures/working-site-triangle-sign.jpg" alt="Working on it!" width="210" height="200">
                                 <span class="hoverEffect">Coming Soon</span>
@@ -204,16 +178,18 @@
 
             </div>
 
-            <div class="contact">
+            <div class="contact" id="contactDiv">
  
                 <div class="contactArea contactBg layer para">
-                    <div class="row vUpper">
-                        <div class="col-xs-12 col-md-6 contactAreaLeft">
-                            <h1>My Contact:</h1>
-                            <a href="mailto:fai.wong@aggiemail.usu.edu" target="_blank" class="btn btn-default active cebtn" role="button" style="background-color: black;color: white;"><i class="fa fa-envelope"></i> Email me</a>
+                    <div class="row opt10">
+                        <div class="col-xs-12 col-md-6 contactPadding">
+                            <div class="contactAreaLeft">
+                                <h1>My Contact:</h1>
+                                <a href="mailto:fai.wong@aggiemail.usu.edu" target="_blank" class="btn btn-default active cebtn" role="button" style="background-color: black;color: white;"><i class="fa fa-envelope"></i> Email me</a>
+                            </div>
                         </div>
                         
-                        <div class="col-xs-12 col-md-6">
+                        <div class="col-xs-12 col-md-4">
                             <a href="http://www.freecodecamp.com/fredfw" target="_blank" class="btn btn-success cebtn" role="button"><i class="fa fa-fire"></i> freeCodeCamp</a>
                             <a href="https://plus.google.com/104519755189153793005/posts" target="_blank" class="btn btn-danger cebtn" role="button"><i class="fa fa-google-plus"></i> Google+</a>
                             <a href="https://github.com/FredFW" target="_blank" class="btn btn-warning cebtn" role="button"><i class="fa fa-github"></i> Github</a>
@@ -224,10 +200,10 @@
     
                 <div class="footer">
                     <div class="row">
-                        <a href="javascript: scrollToHome();nav();move();">Home</a>
-                        <a href="javascript: scrollToAbout();nav();move();">About</a>
-                        <a href="javascript: scrollToPortfolio();nav();move();">Portfolio</a>
-                        <a href="javascript: scrollToContact();nav();move();">Contact</a>
+                        <a href="javascript: scrollToHome();">Home</a>
+                        <a href="javascript: scrollToAbout();">About</a>
+                        <a href="javascript: scrollToPortfolio();">Portfolio</a>
+                        <a href="javascript: scrollToContact();">Contact</a>
                     </div>
                 </div>
       
